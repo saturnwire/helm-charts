@@ -1,8 +1,14 @@
 name: Release Charts
 
 on:
-  workflow_dispatch: {}
-
+  workflow_dispatch: 
+    inputs:
+      githubOwner:
+        description: 'The Github owner to pull chart releases from'
+        required: true
+      githubRepo:
+        description: 'The Github repo to pull chart releases from'
+        required: true
 jobs:
   release:
     runs-on: ubuntu-latest
