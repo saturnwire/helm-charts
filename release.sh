@@ -4,6 +4,6 @@ wget --no-verbose https://github.com/saturnwire/chart-releaser/releases/download
 tar -zxvf chart-releaser_1.1.0_linux_amd64.tar.gz
 
 mkdir -p .cr-release-packages
-./cr index -o ${GITHUB_OWNER} -r ${GITHUB_REPO} -c https://charts.saturnwire.com -i ./index.yaml --token ${GITHUB_TOKEN}
+./cr index --remote -o ${GITHUB_OWNER} -r ${GITHUB_REPO} -c https://charts.saturnwire.com -i ./index.yaml --token ${GITHUB_TOKEN}
 
 cat index.yaml
