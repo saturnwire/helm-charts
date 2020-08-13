@@ -1,0 +1,7 @@
+inputs:
+  githubOwner:
+    description: 'The Github owner to pull chart releases from'
+    required: true
+  githubRepo:
+    description: 'The Github repo to pull chart releases from'
+    required: true
