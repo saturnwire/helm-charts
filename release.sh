@@ -8,7 +8,8 @@ mkdir -p .cr-release-packages
 
 cat index.yaml
 
-git status
+git config --global user.email "automation@saturnwire.com"
+git config --global user.name "SaturnWire Automation"
 
 git add index.yaml
 git commit -m "Auto-releasing new index file"
