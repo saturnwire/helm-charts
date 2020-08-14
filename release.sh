@@ -7,3 +7,9 @@ mkdir -p .cr-release-packages
 ./cr index --remote -o ${GITHUB_OWNER} -r ${GITHUB_REPO} -c https://charts.saturnwire.com -i ./index.yaml --token ${GITHUB_TOKEN}
 
 cat index.yaml
+
+git status
+
+git add index.yaml
+git commit -m "Auto-releasing new index file"
+git push -u origin master
