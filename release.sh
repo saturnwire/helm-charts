@@ -10,11 +10,14 @@ mkdir -p .cr-release-packages
 ./cr index --remote -o ${GITHUB_OWNER} -r ${GITHUB_REPO} -c https://charts.saturnwire.com -i ./index.yaml --token ${GITHUB_TOKEN}
 
 # Detect if index changed and commit back to master
-git diff --exit-code index.yaml
-if [[ $? -eq 1 ]]; then
+INDEX_UNCHANGED=true
+git diff --exit-code index.yaml || INDEX_UNCHANGED=false
+if [[ $INDEX_UNCHANGE == false ]]; then
   git config --global user.email "automation@saturnwire.com"
   git config --global user.name "SaturnWire Automation"
   git add index.yaml
   git commit -m "Auto-releasing new index file"
   git push -u origin master
+else 
+  echo "Index file did not change"
 fi
