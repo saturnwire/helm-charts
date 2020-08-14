@@ -22,6 +22,4 @@ if [[ $INDEX_UNCHANGED == false ]]; then
   git add index.yaml
   git commit -m "Auto-releasing new index file"
   git push -u origin master
-else 
-  echo "Index file did not change"
 fi
