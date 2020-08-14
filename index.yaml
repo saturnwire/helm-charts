@@ -2,7 +2,7 @@ apiVersion: v1
 entries:
   multi-stage-cron:
   - apiVersion: v2
-    created: "2020-08-14T00:39:36.9167058-06:00"
+    created: "2020-08-14T00:38:01.0868712-06:00"
     description: A generic Helm chart for running multi-stage processes using a K8s
       cronjobs
     digest: 224cb6243b0fbac7d11a29cbfa5af5dacdfc5fdd1ec1b9ef7b88ea32cc281ba0
