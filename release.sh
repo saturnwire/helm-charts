@@ -12,7 +12,7 @@ mkdir -p .cr-release-packages
 
 # Create the new index files with updated packages from repo
 ./cr index --remote -o ${GITHUB_OWNER} -r ${GITHUB_REPO} -c https://charts.saturnwire.com -i ./index.yaml --token ${GITHUB_TOKEN}
-echo $?
+
 # Detect if index changed and commit back to master
 INDEX_UNCHANGED=true
 git diff --exit-code index.yaml > /dev/null || INDEX_UNCHANGED=false
