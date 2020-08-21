@@ -12,8 +12,8 @@ token=${GITHUB_TOKEN}
 repo_full_name=${GITHUB_REPOSITORY:-$(git config --local remote.origin.url|sed -n 's#.*\:\([^.]*\)\.git#\1#p')}
 
 branch=$(git rev-parse --abbrev-ref HEAD)
-chart_name=$(grep 'name:' ${CHART_PATH}/Chart.yaml | awk '{ print $2 }')
-chart_version=$(grep 'version:' ${CHART_PATH}/Chart.yaml | awk '{ print $2 }')
+chart_name=$(grep 'name:' ${chart_path}/Chart.yaml | awk '{ print $2 }')
+chart_version=$(grep 'version:' ${chart_path}/Chart.yaml | awk '{ print $2 }')
 helm_package="${chart_name}-${chart_version}.tgz"
 
 generate_post_data() {
@@ -29,7 +29,7 @@ EOF
 }
 
 echo "Creating helm package: ${helm_package}"
-helm package ${CHART_PATH}
+helm package ${chart_path}
 
 echo "Create release ${chart_version} for repo: ${repo_full_name} branch: ${branch}"
 id=$(curl --silent --data "$(generate_post_data)" "https://api.github.com/repos/${repo_full_name}/releases?access_token=${token}" | jq -r .id)
