@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-set -eu -o pipefail
 
 # FYI: This Script assumes you have jq installed
 # This script is designed to be run from Github actions or locally assuming the right environment variables are present.
@@ -8,6 +7,8 @@ token=${GITHUB_TOKEN}
 repo_full_name=${GITHUB_REPOSITORY:-$(git config --local remote.origin.url|sed -n 's#.*\:\([^.]*\)\.git#\1#p')}
 chart_path=${CHART_PATH:-"./chart"}
 index_repo=${INDEX_REPOSITORY:-"saturnwire/helm-charts"}
+
+set -eu -o pipefail
 
 branch=$(git rev-parse --abbrev-ref HEAD)
 chart_name=$(grep 'name:' ${CHART_PATH}/Chart.yaml | awk '{ print $2 }')
