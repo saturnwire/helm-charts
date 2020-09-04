@@ -42,6 +42,16 @@ entries:
     version: 0.1.2
   multi-stage-cron:
   - apiVersion: v2
+    created: "2020-09-04T17:35:14.943513307Z"
+    description: A generic Helm chart for running multi-stage processes using a K8s
+      cronjobs
+    digest: 40afacca2328c1fcabf908be828e874c6317ffac1067693120448218f31d7138
+    name: multi-stage-cron
+    type: application
+    urls:
+    - https://github.com/saturnwire/multi-stage-cron-helm/releases/download/0.1.5/multi-stage-cron-0.1.5.tgz
+    version: 0.1.5
+  - apiVersion: v2
     created: "2020-08-14T06:45:09.223225002Z"
     description: A generic Helm chart for running multi-stage processes using a K8s
       cronjobs
