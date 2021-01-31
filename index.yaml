@@ -91,4 +91,15 @@ entries:
     urls:
     - https://github.com/saturnwire/multi-stage-cron-helm/releases/download/0.1.1/multi-stage-cron-0.1.1.tgz
     version: 0.1.1
+  plex:
+  - apiVersion: v2
+    appVersion: 1.21.1.3876-3c3adfcb4
+    created: "2021-01-31T21:54:37.854562335Z"
+    description: A Helm chart for Kubernetes
+    digest: 20ca9cb8eff216467257c611d6267d14fda81f146d3bba59a5b59e237192ac46
+    name: plex
+    type: application
+    urls:
+    - https://github.com/saturnwire/plex-helm-chart/releases/download/0.1.0/plex-0.1.0.tgz
+    version: 0.1.0
 generated: "2020-08-07T00:20:25.32342569-06:00"
